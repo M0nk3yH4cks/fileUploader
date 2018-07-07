@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ div.container
+     h1= title
+     p Upload your C test
+     form(method='post', enctype='multipart/form-data')
+      #customFile.custom-file
+              input#exampleInputFile.custom-file-input(type='file', aria-describedby='fileHelp', name='fileupload',accept=".c")
+              label#inputLabel.custom-file-label(for='exampleInputFile') Sai cosa devi fare...
+      input(type='submit', name='uploadfile', value='Upload File', class='btn btn-primary', style='margin-top: 10px')
+
+      script.
+        document.getElementById('exampleInputFile').onchange = function () {
+          document.getElementById('inputLabel').textContent = this.value;
+        };
+ div
